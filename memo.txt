@@ -1,5 +1,9 @@
 
-cd ~/workspace/github/ionic-test
+cd ~/workspace/github/ionic-test/src
 
 -----------------------------------
+
+ionic serve
+
+http://localhost:8100
 
