@@ -2,3 +2,15 @@
 npm install -g @ionic/cli
 
 ionic start myApp blank --type vue
+
+nvm -v
+
+nvm install 22
+
+nvm use 22
+
+npx cap init
+
+npm install @capacitor/android
+
+npx cap sync

@@ -3,7 +3,54 @@ cd ~/workspace/github/ionic-test/src
 
 -----------------------------------
 
+port
+
+ionic: 8100
+Web動作確認: 8101
+
+-----------------------------------
+
+nvm use 22
+
 ionic serve
 
 http://localhost:8100
+
+
+-----------------------------------
+
+ビルド
+
+Web
+
+ionic build
+
+serve ./dist -l 8101
+
+http://localhost:8101
+
+
+
+Android
+
+wslからは動かない
+
+プロジェクトをWindowsにコピー
+
+Windowsのコマンドプロンプト（Power Shellではめんどう）で
+
+cd workspace/github/ionic-test/src
+
+nvm use 22
+
+必要なら
+  npm install
+
+ionic build
+
+npx cap add android
+
+npx cap sync
+
+npx cap open android
 
