@@ -34,6 +34,7 @@ http://localhost:8101
 Android
 
 wslからは動かない
+macは普通に動く
 
 プロジェクトをWindowsにコピー
 

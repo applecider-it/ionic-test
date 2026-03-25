@@ -20,7 +20,7 @@
         <ion-input v-model="text" placeholder="入力"></ion-input>
 
         <ion-button expand="block" shape="round" @click="addTodo">
-          追加
+          追加！！
         </ion-button>
 
         <ion-list>
