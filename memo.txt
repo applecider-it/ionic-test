@@ -14,12 +14,15 @@ nvm use 22
 
 ionic serve
 
+ionic serve --no-open
+
 http://localhost:8100
 
 
 -----------------------------------
 
 ビルド
+
 
 Web
 
@@ -29,29 +32,52 @@ serve ./dist -l 8101
 
 http://localhost:8101
 
+import {IonXxxxx}がないと、ビルド後だけ表示が崩れる。
 
+
+----
 
 Android
 
 wslからは動かない
+winネイティブは一応動くけど遅い
 macは普通に動く
 
-プロジェクトをWindowsにコピー
+--
 
-Windowsのコマンドプロンプト（Power Shellではめんどう）で
+winだけ必要
 
-cd workspace/github/ionic-test/src
+プロジェクトをwslだけじゃなくWindowsネイティブにも用意する
+
+windowsネイティブなので、すべてが遅いので注意
+
+ブラウザまでの確認はwslが無難
+
+--
 
 nvm use 22
+  または、22以上
 
 必要なら
-  npm install
+  npm ci
 
 ionic build
 
 npx cap add android
+  初回だけ
 
 npx cap sync
 
 npx cap open android
+  Android Stadioが開いた後は不要
+
+
+--
+
+更新反映
+
+ionic build && npx cap sync
+
+エミュレーター更新
+  初期画面に戻ってしまう
 

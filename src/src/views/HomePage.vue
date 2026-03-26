@@ -20,7 +20,7 @@
         </ion-item>
 
         <ion-button expand="block" shape="round" @click="addTodo">
-          追加！！
+          追加
         </ion-button>
 
         <ion-list>
@@ -55,6 +55,7 @@ import {
   IonButton,
   IonList,
   IonItem,
+  IonLabel,
 } from '@ionic/vue';
 
 const router = useRouter();
