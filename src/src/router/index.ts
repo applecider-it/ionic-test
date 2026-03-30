@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import TodoPage from '../views/TodoPage.vue';
-import DevelopmentPage from '../views/DevelopmentPage.vue';
+
+import HomePage from '@/views/HomePage.vue';
+import TodoPage from '@/views/TodoPage.vue';
+import DevelopmentPage from '@/views/DevelopmentPage.vue';
+
+import { isAuthenticated } from '@/services/auth/auth'
+import { toastMessage } from '@/services/ui/toast'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,6 +27,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/todo',
     name: 'todo',
     component: TodoPage,
+    meta: { requiresAuth: true },
   },
 ];
 
@@ -30,5 +35,14 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !isAuthenticated.value) {
+    toastMessage.value = 'ログイン必須ページです。'
+    next('/')
+  } else {
+    next()
+  }
+})
 
 export default router;

@@ -9,20 +9,28 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
-      <div style="margin-top: 2rem">遷移テスト</div>
+    <ion-content class="ion-padding" :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Blank</ion-title>
+        </ion-toolbar>
+      </ion-header>
 
       <div>
-        <ion-button @click="go"> トップへ(router) </ion-button>
-        <ion-button router-link="/"> トップへ(link) </ion-button>
+        <ion-item>
+          <ion-button @click="login"> ログイン </ion-button>
+          <ion-button @click="logout"> ログアウト </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button @click="go"> トップへ(router) </ion-button>
+          <ion-button router-link="/"> トップへ(link) </ion-button>
+        </ion-item>
       </div>
-
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
 import {
   IonPage,
   IonHeader,
@@ -37,11 +45,26 @@ import {
   IonBackButton,
 } from '@ionic/vue';
 
+import { useRouter } from 'vue-router';
+
+import { isAuthenticated } from '@/services/auth/auth'
 
 const router = useRouter();
 
 const go = () => {
   router.push('/');
 };
+
+const login = () => {
+  console.log('login')
+
+  isAuthenticated.value = true;
+}
+
+const logout = () => {
+  console.log('logout')
+
+  isAuthenticated.value = false;
+}
 
 </script>
