@@ -25,6 +25,13 @@
           <ion-button @click="go"> トップへ(router) </ion-button>
           <ion-button router-link="/"> トップへ(link) </ion-button>
         </ion-item>
+        <ion-item>
+          <ion-button @click="takePhoto">
+            カメラ起動
+          </ion-button>
+
+          <img v-if="imageUrl" :src="imageUrl" />
+        </ion-item>
       </div>
     </ion-content>
   </ion-page>
@@ -47,6 +54,8 @@ import {
 
 import { useRouter } from 'vue-router';
 
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
+
 import { isAuthenticated } from '@/services/auth/auth'
 
 const router = useRouter();
@@ -65,6 +74,19 @@ const logout = () => {
   console.log('logout')
 
   isAuthenticated.value = false;
+}
+
+import { ref } from 'vue'
+
+const imageUrl = ref('')
+
+const takePhoto = async () => {
+  const image = await Camera.getPhoto({
+    resultType: CameraResultType.DataUrl,
+    source: CameraSource.Camera
+  })
+
+  imageUrl.value = image.dataUrl!
 }
 
 </script>

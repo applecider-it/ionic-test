@@ -92,3 +92,24 @@ ionic build && npx cap sync
 エミュレーター更新
   初期画面に戻ってしまう
 
+-----------------------------------
+
+カメラを使う時
+
+
+Android
+
+android/app/src/main/AndroidManifest.xml
+
+<uses-permission android:name="android.permission.CAMERA" />
+
+
+iOS
+
+ios/App/App/Info.plist
+
+<key>NSCameraUsageDescription</key>
+<string>カメラを使用します</string>
+
+
+

@@ -14,3 +14,7 @@ npx cap init
 npm install @capacitor/android
 
 npx cap sync
+
+npm install @capacitor/camera
+npx cap sync
+
