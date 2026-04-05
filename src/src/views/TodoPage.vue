@@ -19,12 +19,14 @@ import { ref } from 'vue';
 const text = ref<string>('');
 const todos = ref<string[]>([]);
 
+/** TOD追加 */
 const addTodo = () => {
   if (!text.value) return;
   todos.value.push(text.value);
   text.value = '';
 };
 
+/** TOD削除 */
 const removeTodo = (index: number) => {
   todos.value.splice(index, 1);
 };

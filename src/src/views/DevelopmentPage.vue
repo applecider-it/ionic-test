@@ -13,34 +13,37 @@ import {
   IonBackButton,
 } from '@ionic/vue';
 
+import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
 
 import { isAuthenticated } from '@/services/auth/auth'
 
+const imageUrl = ref('')
+
 const router = useRouter();
 
+/** ルーターを使った移動の動作確認 */
 const go = () => {
   router.push('/');
 };
 
+/** 擬似的なログイン */
 const login = () => {
   console.log('login')
 
   isAuthenticated.value = true;
 }
 
+/** 擬似的なログアウト */
 const logout = () => {
   console.log('logout')
 
   isAuthenticated.value = false;
 }
 
-import { ref } from 'vue'
-
-const imageUrl = ref('')
-
+/** 写真を撮る */
 const takePhoto = async () => {
   const image = await Camera.getPhoto({
     resultType: CameraResultType.DataUrl,
@@ -83,7 +86,8 @@ const takePhoto = async () => {
           <ion-button @click="takePhoto">
             カメラ起動
           </ion-button>
-
+        </ion-item>
+        <ion-item>
           <img v-if="imageUrl" :src="imageUrl" />
         </ion-item>
       </div>
