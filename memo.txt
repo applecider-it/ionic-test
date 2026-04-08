@@ -98,6 +98,29 @@ ionic build && npx cap sync
 エミュレーター更新
   初期画面に戻ってしまう
 
+
+----
+
+iOA
+
+npx cap add ios
+  初回だけ
+
+ionic build
+npx cap copy ios
+
+
+npx cap open ios
+  xcodeが開いた後は不要
+
+--
+
+更新反映
+
+ionic build && npx cap sync ios
+
+
+
 -----------------------------------
 
 カメラを使う時
@@ -116,6 +139,10 @@ ios/App/App/Info.plist
 
 <key>NSCameraUsageDescription</key>
 <string>カメラを使用します</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>写真を保存するために使用します</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>写真ライブラリにアクセスするために必要です</string>
 
-
+この設定があっても、エミュレーターでは動かない
 
