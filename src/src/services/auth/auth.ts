@@ -1,6 +1,6 @@
 import { ref, Ref } from 'vue'
 
-import { jsonRequestHeaders } from '@/services/api/http';
+import { jsonRequestHeaders, apiUrl } from '@/services/api/http';
 
 import axios from 'axios';
 
@@ -23,7 +23,7 @@ async function login(email: string, password: string) {
     const data: any = { email, password };
     console.log(data);
 
-    const url = 'http://127.0.0.1:3000/login';
+    const url = apiUrl('/login');
 
     let response = null;
 
@@ -41,11 +41,10 @@ async function login(email: string, password: string) {
 
         console.log(authUser.value);
     } catch (error: any) {
-        console.error('error', error);
+        console.log('error', error);
         response = error.response;
-        if (error.response.status !== 401) {
-            return
-        }
+        console.log('response', response);
+        if (!response) return 500;
     }
 
     console.log('response.data', response!.data);

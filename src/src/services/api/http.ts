@@ -1,3 +1,5 @@
+import { Capacitor } from '@capacitor/core';
+
 /**
  * APIのhttp関連
  */
@@ -10,4 +12,14 @@ export function jsonRequestHeaders() {
   };
 
   return headers;
+}
+
+/** API送信 */
+export function apiUrl(uri: string) {
+  const host = (Capacitor.getPlatform() === 'android') ?
+    '10.0.2.2:3000' : '127.0.0.1:3000'
+
+  const url = `http://${host}${uri}`;
+
+  return url;
 }
