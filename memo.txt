@@ -7,12 +7,14 @@ port
 
 ionic: 8100
 Web動作確認: 8101
+node: 3000
 
 -----------------------------------
 
 nvm use 22
   または、これ以上
 
+cd ~/workspace/github/ionic-test/src
 
 ionic serve --no-open
 
@@ -24,6 +26,15 @@ ionic serve
 
 
 http://localhost:8100
+
+
+-----------------------------------
+
+node
+
+cd ~/workspace/github/my_flutter_app/node
+
+npx tsx watch ./app/entrypoints/server.js
 
 
 -----------------------------------

@@ -5,7 +5,7 @@ import HomePage from '@/views/HomePage.vue';
 import TodoPage from '@/views/TodoPage.vue';
 import DevelopmentPage from '@/views/DevelopmentPage.vue';
 
-import { isAuthenticated } from '@/services/auth/auth'
+import { auth } from '@/services/auth/auth'
 import { showToast } from '@/services/ui/message'
 
 const routes: Array<RouteRecordRaw> = [
@@ -37,7 +37,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated.value) {
+  if (to.meta.requiresAuth && !auth.user()) {
     showToast('ログイン必須ページです。', 'alert');
     next('/')
   } else {

@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
 
-import { isAuthenticated } from '@/services/auth/auth'
+import { auth } from '@/services/auth/auth'
 
 const imageUrl = ref('')
 
@@ -14,7 +14,7 @@ const router = useRouter();
 const login = () => {
   console.log('login')
 
-  isAuthenticated.value = true;
+  auth.login();
 
   router.back();
 }
@@ -23,7 +23,7 @@ const login = () => {
 const logout = () => {
   console.log('logout')
 
-  isAuthenticated.value = false;
+  auth.logout();
 
   router.back();
 }

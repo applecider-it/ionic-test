@@ -4,7 +4,11 @@ import router from './router';
 
 import { IonicVue } from '@ionic/vue';
 
+import { auth } from '@/services/auth/auth';
+
 import './assets/css/app.css'
+
+auth.setupAuth();
 
 const app = createApp(App)
   .use(IonicVue)
