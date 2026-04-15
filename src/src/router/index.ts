@@ -5,6 +5,7 @@ import HomePage from "@/views/HomePage.vue";
 import TodoPage from "@/views/TodoPage.vue";
 import DevelopmentPage from "@/views/DevelopmentPage.vue";
 import AuthPage from "@/views/AuthPage.vue";
+import CameraPage from "@/views/CameraPage.vue";
 
 import { auth } from "@/services/auth/auth";
 import { showToast } from "@/services/ui/message";
@@ -46,6 +47,14 @@ const routes: Array<RouteRecordRaw> = [
     path: "/auth",
     name: "Auth",
     component: AuthPage,
+    meta: {
+      level: 1,
+    },
+  },
+  {
+    path: "/camera",
+    name: "Camera",
+    component: CameraPage,
     meta: {
       level: 1,
     },

@@ -7,6 +7,9 @@
       <div>
         <router-link to="/auth" class="app-btn-primary">Auth</router-link>
       </div>
+      <div>
+        <router-link to="/camera" class="app-btn-primary">Camera</router-link>
+      </div>
       <div class="py-5">
         <router-link to="/development" class="app-btn-primary">development</router-link>
       </div>
