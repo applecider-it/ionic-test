@@ -3,6 +3,8 @@ import { ref } from 'vue'
 
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera'
 
+import AppLayout from '@/components/layouts/AppLayout.vue'
+
 const imageUrl = ref('')
 
 const email = ref('test@example.com')
@@ -20,9 +22,7 @@ const takePhoto = async () => {
 </script>
 
 <template>
-  <div class="p-10 pt-16">
-    <router-link to="/" class="app-btn-primary">戻る</router-link>
-
+  <AppLayout>
     <div class="my-3">
       <img src="../assets/images/Block.png" class="w-[50px]" />
     </div>
@@ -35,5 +35,5 @@ const takePhoto = async () => {
     <div>
       <img v-if="imageUrl" :src="imageUrl" class="w-[200px]" />
     </div>
-  </div>
+  </AppLayout>
 </template>

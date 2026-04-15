@@ -5,6 +5,8 @@ import { useRouter } from 'vue-router';
 import { auth } from '@/services/auth/auth'
 import { showToast } from '@/services/ui/message'
 
+import AppLayout from '@/components/layouts/AppLayout.vue'
+
 const email = ref('test@example.com')
 const password = ref('1234')
 
@@ -33,15 +35,15 @@ const logout = () => {
 
   auth.logout();
 
+  showToast('ログアウトしました');
+
   router.back();
 }
 </script>
 
 <template>
-  <div class="p-10 pt-16">
-    <router-link to="/" class="app-btn-primary">戻る</router-link>
-
-    <div class="space-y-5 my-10">
+  <AppLayout>
+    <div class="space-y-5">
       <div class="space-y-2">
         <div>
           <input v-model="email" type="text" class="app-form-input" />
@@ -56,5 +58,5 @@ const logout = () => {
         <button @click="logout" class="app-btn-primary"> ログアウト </button>
       </div>
     </div>
-  </div>
+  </AppLayout>
 </template>

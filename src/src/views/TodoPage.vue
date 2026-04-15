@@ -3,6 +3,8 @@ import { useRouter } from 'vue-router';
 
 import { ref } from 'vue';
 
+import AppLayout from '@/components/layouts/AppLayout.vue'
+
 const router = useRouter();
 
 const text = ref<string>('');
@@ -22,10 +24,8 @@ const removeTodo = (index: number) => {
 </script>
 
 <template>
-  <div class="p-10 pt-16">
-    <router-link to="/" class="app-btn-primary">戻る</router-link>
-
-    <div class="space-y-5 my-10">
+  <AppLayout>
+    <div class="space-y-5">
       <div position="stacked">Todoコメント</div>
       <input type="text" v-model="text" placeholder="入力" class="app-form-input"></input>
 
@@ -44,5 +44,5 @@ const removeTodo = (index: number) => {
         </button>
       </li>
     </ul>
-  </div>
+  </AppLayout>
 </template>
