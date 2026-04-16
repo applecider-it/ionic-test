@@ -28,6 +28,14 @@ ionic serve
 http://localhost:8100
 
 
+更新反映
+
+
+cd ~/workspace/github/ionic-test/src
+
+ionic build && npx cap sync
+
+
 -----------------------------------
 
 node
