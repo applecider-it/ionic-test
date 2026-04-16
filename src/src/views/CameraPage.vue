@@ -19,7 +19,7 @@ const takePhoto = async () => {
 </script>
 
 <template>
-  <AppLayout>
+  <AppLayout name="カメラ動作確認">
     <div>
       <button @click="takePhoto" class="app-btn-primary">
         カメラ起動

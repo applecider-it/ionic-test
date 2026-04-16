@@ -24,7 +24,7 @@ const removeTodo = (index: number) => {
 </script>
 
 <template>
-  <AppLayout>
+  <AppLayout name="Todo">
     <div class="space-y-5">
       <div position="stacked">Todoコメント</div>
       <input type="text" v-model="text" placeholder="入力" class="app-form-input"></input>

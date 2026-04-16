@@ -5,7 +5,7 @@ import AppLayout from '@/components/layouts/AppLayout.vue'
 </script>
 
 <template>
-  <AppLayout>
+  <AppLayout name="開発者向けページ">
     <div>
       <div>アセット動作確認</div>
       <img src="../assets/images/Block.png" class="w-[50px]" />
