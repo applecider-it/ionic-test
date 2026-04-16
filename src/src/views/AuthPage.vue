@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 
 import { auth } from '@/services/auth/auth'
 import { showToast } from '@/services/ui/message'
 
 import AppLayout from '@/components/layouts/AppLayout.vue'
+import { f } from 'vue-router/dist/router-CWoNjPRp.mjs';
 
 const email = ref('test@example.com')
 const password = ref('1234')
+
+const isAuth = ref(false);
 
 const router = useRouter();
 
@@ -39,11 +42,15 @@ const logout = () => {
 
   router.back();
 }
+
+onMounted(() => {
+  isAuth.value = auth.checkAuth();
+})
 </script>
 
 <template>
-  <AppLayout>
-    <div class="space-y-5">
+  <AppLayout name="認証">
+    <div v-if="!isAuth" class="space-y-5">
       <div class="space-y-2">
         <div>
           <input v-model="email" type="text" class="app-form-input" />
@@ -55,6 +62,11 @@ const logout = () => {
 
       <div class="space-x-3">
         <button @click="login" class="app-btn-primary"> ログイン </button>
+      </div>
+    </div>
+
+    <div v-else>
+      <div>
         <button @click="logout" class="app-btn-primary"> ログアウト </button>
       </div>
     </div>
