@@ -19,7 +19,8 @@ export function apiUrl(uri: string) {
   const host = (Capacitor.getPlatform() === 'android') ?
     '10.0.2.2:3000' : '127.0.0.1:3000'
 
-  const url = `http://${host}${uri}`;
+  const version = 'v1';
+  const url = `http://${host}/${version}${uri}`;
 
   return url;
 }
