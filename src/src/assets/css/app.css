@@ -52,28 +52,28 @@
 /* 進む */
 .slide-forward-enter-active,
 .slide-forward-leave-active {
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 .slide-forward-enter-from {
-  transform: translateX(30%);
+  transform: translateX(10%);
   opacity: 0;
 }
 .slide-forward-leave-to {
-  transform: translateX(-30%);
+  transform: translateX(-10%);
   opacity: 0;
 }
 
 /* 戻る */
 .slide-back-enter-active,
 .slide-back-leave-active {
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 .slide-back-enter-from {
-  transform: translateX(-30%);
+  transform: translateX(-10%);
   opacity: 0;
 }
 .slide-back-leave-to {
-  transform: translateX(30%);
+  transform: translateX(10%);
   opacity: 0;
 }
 
