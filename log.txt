@@ -26,3 +26,6 @@ npm install @capacitor/ios@8.2.0
 
 npm install @capacitor/preferences
 
+npm uninstall @ionic/vue
+npm uninstall @ionic/vue-router
+npm uninstall ionicons

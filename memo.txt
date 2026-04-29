@@ -5,8 +5,8 @@ cd ~/workspace/github/ionic-test/src
 
 port
 
-ionic: 8100
-Web動作確認: 8101
+vue: 5173
+Web動作確認: 5174
 node: 3000
 
 -----------------------------------
@@ -16,16 +16,12 @@ nvm use 22
 
 cd ~/workspace/github/ionic-test/src
 
-ionic serve --no-open
-
-
-windowも開きたい時
-
-ionic serve
+npm run dev
 
 
 
-http://localhost:8100
+
+http://localhost:5173
 
 
 更新反映
@@ -33,14 +29,14 @@ http://localhost:8100
 
 cd ~/workspace/github/ionic-test/src
 
-ionic build && npx cap sync
+npm run build && npx cap sync
 
 
 -----------------------------------
 
 node
 
-cd ~/workspace/github/my_flutter_app/node
+cd ~/workspace/github/flutter-test/node
 
 npx tsx watch ./app/entrypoints/server.js
 
@@ -51,9 +47,6 @@ npx tsx watch ./app/entrypoints/server.js
 
 npm ci
 
-npm install -g @ionic/cli
-  必要なら
-
 
 -----------------------------------
 
@@ -62,13 +55,11 @@ npm install -g @ionic/cli
 
 Web
 
-ionic build
+npm run build
 
-serve ./dist -l 8101
+serve ./dist -l 5174
 
-http://localhost:8101
-
-import {IonXxxxx}がないと、ビルド後だけ表示が崩れる。
+http://localhost:5174
 
 
 ----
@@ -97,7 +88,7 @@ nvm use 22
 必要なら
   npm ci
 
-ionic build
+npm run build
 
 npx cap add android
   初回だけ
@@ -112,7 +103,7 @@ npx cap open android
 
 更新反映
 
-ionic build && npx cap sync
+npm run build && npx cap sync
 
 エミュレーター更新
   初期画面に戻ってしまう
@@ -128,7 +119,7 @@ iOA
 npx cap add ios
   初回だけ
 
-ionic build
+npm run build
 
 npx cap sync ios
 
@@ -140,7 +131,7 @@ npx cap open ios
 
 更新反映
 
-ionic build && npx cap sync ios
+npm run build && npx cap sync ios
 
 
 
