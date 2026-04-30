@@ -1,3 +1,3 @@
-# ionicの動作確認
+# capacitorの動作確認
 
 - [設計](./documents/design.md)
